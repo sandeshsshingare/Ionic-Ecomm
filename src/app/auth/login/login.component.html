@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form #loginForm="ngForm" class="" (ngSubmit)="loginFun(loginForm.value)">
+    <div class="ion-padding-top">
+      <ion-input
+        label="Email"
+        label-placement="floating"
+        fill="outline"
+        name="email"
+        class=""
+        ngModel
+        placeholder="Enter email"
+      ></ion-input>
+    </div>
+
+    <div class="ion-padding-top">
+      <ion-input
+        label="Password"
+        label-placement="floating"
+        fill="outline"
+        name="password"
+        class=""
+        ngModel
+        placeholder="Enter password"
+      ></ion-input>
+    </div>
+
+    <div class="ion-padding-top">
+      <ion-button expand="block" type="submit" class="ion-margin-top">
+        Login <ion-icon name="log-in-outline" slot="end"></ion-icon>
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        type="submit"
+        class="ion-margin-top"
+        color="secondary"
+        type="button"
+        [routerLink]="['/customer/auth/register']"
+      >
+        Create account
+        <ion-icon name="person-circle-outline" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

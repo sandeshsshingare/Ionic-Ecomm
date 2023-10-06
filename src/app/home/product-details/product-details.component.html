@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button
+      defaultHref="/customer/home/products"
+      slot="start"
+    ></ion-back-button>
+    <ion-title> {{ productData?.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-card>
+      <swiper-container pagination="true" pagination clickable="true">
+        <swiper-slide *ngFor="let image of productData?.images">
+          <img alt="Silhouette of mountains" [src]="image?.url" />
+        </swiper-slide>
+      </swiper-container>
+      <ion-card-header class="ion-no-margin">
+        <ion-card-title>
+          <p>
+            {{ productData?.price | currency : "INR" }}
+          </p>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{ productData?.description }}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
